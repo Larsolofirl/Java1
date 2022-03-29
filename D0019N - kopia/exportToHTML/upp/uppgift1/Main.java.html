@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">upp.uppgift1</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+<span class="s0">public class </span><span class="s1">Main {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s2">//Skapar scanner</span>
+        <span class="s1">Scanner input = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Vad är kostnaden?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s2">//Scannern används</span>
+        <span class="s0">int </span><span class="s1">kostnad = input.nextInt()</span><span class="s0">;;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Hur mycket betalar kunden&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s2">//Scannern används igen</span>
+        <span class="s0">int </span><span class="s1">cash = input.nextInt()</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">cashBack = cash - kostnad</span><span class="s0">;</span>
+        <span class="s2">// Skapar en array med de olika valörerna som kunden växlar till</span>
+        <span class="s0">int</span><span class="s1">[] valorer = {</span><span class="s4">1000</span><span class="s0">,</span><span class="s4">500</span><span class="s0">,</span><span class="s4">200</span><span class="s0">, </span><span class="s4">100</span><span class="s0">, </span><span class="s4">50</span><span class="s0">, </span><span class="s4">20</span><span class="s0">, </span><span class="s4">2</span><span class="s0">, </span><span class="s4">1</span><span class="s1">}</span><span class="s0">;</span>
+        <span class="s2">// Skriver ut relevant information</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;beloppet är &quot;</span><span class="s1">+kostnad)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;kunden betalar &quot;</span><span class="s1">+cash)</span><span class="s0">;</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;kunden får tillbaka&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s2">// Loopar igenom arrayen. Beräknar antalet valörer som ska ges i växel.</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i=</span><span class="s4">0</span><span class="s0">;</span><span class="s1">i&lt;valorer.length</span><span class="s0">;</span><span class="s1">i++){</span>
+            <span class="s0">if </span><span class="s1">(cashBack/valorer[i]&gt;=</span><span class="s4">1</span><span class="s1">){</span>
+                <span class="s0">if </span><span class="s1">(valorer[i] &lt; </span><span class="s4">10</span><span class="s1">){</span>
+                    <span class="s1">System.out.println(valorer[i]+</span><span class="s3">&quot;kr mynt &quot;</span><span class="s1">+ cashBack/valorer[i] +</span><span class="s3">&quot; st&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+                    <span class="s1">System.out.println(valorer[i] + </span><span class="s3">&quot;kr sedlar &quot; </span><span class="s1">+ cashBack / valorer[i] + </span><span class="s3">&quot; st&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+            <span class="s1">cashBack %= valorer[i]</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
